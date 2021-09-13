@@ -1,0 +1,12 @@
+/home/stmtk/dev/rust/tuukin/client/target/debug/deps/libthiserror_impl-0ce2f856590cb18c.so: /home/stmtk/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.29/src/lib.rs /home/stmtk/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.29/src/ast.rs /home/stmtk/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.29/src/attr.rs /home/stmtk/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.29/src/expand.rs /home/stmtk/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.29/src/fmt.rs /home/stmtk/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.29/src/generics.rs /home/stmtk/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.29/src/prop.rs /home/stmtk/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.29/src/valid.rs
+
+/home/stmtk/dev/rust/tuukin/client/target/debug/deps/thiserror_impl-0ce2f856590cb18c.d: /home/stmtk/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.29/src/lib.rs /home/stmtk/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.29/src/ast.rs /home/stmtk/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.29/src/attr.rs /home/stmtk/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.29/src/expand.rs /home/stmtk/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.29/src/fmt.rs /home/stmtk/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.29/src/generics.rs /home/stmtk/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.29/src/prop.rs /home/stmtk/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.29/src/valid.rs
+
+/home/stmtk/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.29/src/lib.rs:
+/home/stmtk/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.29/src/ast.rs:
+/home/stmtk/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.29/src/attr.rs:
+/home/stmtk/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.29/src/expand.rs:
+/home/stmtk/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.29/src/fmt.rs:
+/home/stmtk/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.29/src/generics.rs:
+/home/stmtk/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.29/src/prop.rs:
+/home/stmtk/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.29/src/valid.rs:
