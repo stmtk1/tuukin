@@ -1,14 +1,23 @@
 use yew::prelude::*;
 
 enum Msg {
-    AddOne,
+    ClickConnect,
+    SendMsg,
+    InputMsg(String),
+}
+
+enum ConnectStatus {
+    Connected,
+    Disconnected,
 }
 
 struct Model {
     // `ComponentLink` is like a reference to a component.
     // It can be used to send messages to the component
     link: ComponentLink<Self>,
-    value: i64,
+    status: ConnectStatus,
+    logs: Vec<String>,
+    message: String,
 }
 
 impl Component for Model {
@@ -18,16 +27,35 @@ impl Component for Model {
     fn create(_props: Self::Properties, link: ComponentLink<Self>) -> Self {
         Self {
             link,
-            value: 0,
+            status: ConnectStatus::Disconnected,
+            logs: Vec::new(),
+            message: String::from(""),
+
         }
     }
 
     fn update(&mut self, msg: Self::Message) -> ShouldRender {
         match msg {
-            Msg::AddOne => {
-                self.value += 1;
-                // the value has changed so we need to
-                // re-render for it to appear on the page
+            Msg::ClickConnect => {
+                match self.status {
+                    ConnectStatus::Connected => {
+                        self.status = ConnectStatus::Disconnected;
+                        self.logs.push(String::from("disconnected"));
+                    },
+                    ConnectStatus::Disconnected => {
+                        self.logs.push(String::from("connected"));
+                        self.status = ConnectStatus::Connected;
+                    },
+                }
+                true
+            },
+            Msg::SendMsg => {
+                self.logs.push(String::from(format!("Sending {}", self.message)));
+                self.message = String::new();
+                true
+            },
+            Msg::InputMsg(s) => {
+                self.message = s;
                 true
             }
         }
@@ -42,9 +70,45 @@ impl Component for Model {
 
     fn view(&self) -> Html {
         html! {
+           <div>
+               <div>{self.header()}</div>
+               <div>{self.log_view()}</div>
+               <div>{self.message_form()}</div>
+           </div>
+        }
+    }
+}
+
+impl Model {
+    fn header(&self) -> Html {
+        let connect_button = match self.status {
+            ConnectStatus::Connected => "Disconnected",
+            ConnectStatus::Disconnected => "Connected",
+        };
+        let status = match self.status {
+            ConnectStatus::Connected => "Connected()",
+            ConnectStatus::Disconnected => "Disconnected",
+        };
+        html! {
             <div>
-                <button onclick=self.link.callback(|_| Msg::AddOne)>{ "+1" }</button>
-                <p>{ self.value }</p>
+                <h3>{ "Chat! "}</h3>
+                <button onclick={ self.link.callback(|_| Msg::ClickConnect)}>{connect_button}</button>
+                <span>{status}</span>
+            </div>
+        }
+    }
+
+    fn log_view(&self) -> Html {
+        html! {
+            <div style="width:20em;height:15em;overflow:auto;border:1px solid black">{ self.logs.iter().map(|log| html! {<div>{log}</div> }).collect::<Vec<_>>() }</div>
+        }
+    }
+
+    fn message_form(&self) -> Html {
+        html! {
+            <div>
+                <input value={ self.message.clone() } oninput={ self.link.callback(|e: InputData| Msg::InputMsg(e.value.clone())) } type="text" />
+                <button onclick={ self.link.callback(|_| Msg::SendMsg )}>{"Send"}</button>
             </div>
         }
     }
